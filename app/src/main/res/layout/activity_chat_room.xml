@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatRoomActivity"
+    android:background="@color/pageBackground">
+
+    <RelativeLayout
+        android:id="@+id/sendMessageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="4dp"
+        >
+
+        <ImageView
+            android:id="@+id/sendMessageBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_send_24dp"
+            android:layout_alignParentRight="true"
+            android:padding="6dp"
+            android:layout_centerVertical="true"
+            />
+
+        <View
+            android:id="@+id/lineDistinguisher"
+            android:layout_width="0.15dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/sendMessageBtn"
+            android:layout_alignBottom="@id/sendMessageBtn"
+            android:layout_toLeftOf="@id/sendMessageBtn"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="4dp"
+            android:background="#bdbdbd"/>
+
+
+        <EditText
+            android:id="@+id/sendMessageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:textSize="14sp"
+            android:hint="@string/label_write_something_here"
+            android:padding="4dp"
+            android:layout_toLeftOf="@id/lineDistinguisher"
+            android:layout_centerVertical="true"
+            />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.15dp"
+        android:background="#bdbdbd"
+        android:layout_above="@id/sendMessageLayout"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chatHistoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sendMessageLayout"
+        android:padding="4dp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
